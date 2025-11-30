@@ -269,14 +269,13 @@ body {
 /* Caja de significado */
 .infoBox {
   position: fixed;
-  bottom: 20px;
-  left: 50%;
-  transform: translateX(-50%);
+  bottom: 0;        /* Se pega EXACTO al fondo de la pantalla */
+  left: 0;
+  width: 100%;      /* Para que quede tipo barra emergente */
   background: white;
   padding: 10px 15px;
-  border-radius: 8px;
-  box-shadow: 0 0 10px #aaa;
-  height: 100vh;
+  border-radius: 12px 12px 0 0; /* borde arriba redondeado */
+  box-shadow: 0 -4px 15px rgba(0,0,0,0.2);
 }
 
 .hidden {
