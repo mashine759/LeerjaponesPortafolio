@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GABO STYLISH | Barber & Style</title>
+
+
+<style>
+    /* =========================================
+       1. ESTILOS GENERALES (BASE / PC)
+       ========================================= */
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        background-color: #051020;
+        color: #e0e6ed;
+        line-height: 1.6;
+        overflow-x: hidden;
+    }
+
+    h1, h2, h3 {
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    /* Degradado de texto GABO STYLISH */
+    .text-gradient {
+        background: linear-gradient(90deg, #4facfe 0%, #00f2fe 50%, #a18cd1 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+    }
+
+    /* --- HERO / INTRO --- */
+    header {
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        position: relative;
+        background-image: url('https://images.pexels.com/photos/7697712/pexels-photo-7697712.jpeg'); 
+        background-attachment: fixed; /* Parallax activo en PC */
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(5, 16, 32, 0.7);
+        backdrop-filter: blur(3px);
+        background: linear-gradient(to bottom, rgba(5,16,32,0.6) 0%, rgba(5,16,32,0.9) 80%, #051020 100%);
+        z-index: 1;
+    }
+
+    .hero-content {
+        z-index: 2;
+        padding: 20px;
+        max-width: 800px; /* Limita el ancho en PC grandes */
+    }
+
+    .hero-content h1 {
+        font-size: 4.5rem; /* Grande para PC */
+        font-weight: 800;
+        margin-bottom: 10px;
+        text-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .hero-content p {
+        font-size: 1.3rem;
+        color: #a0aec0;
+        letter-spacing: 2px;
+    }
+
+    .btn-reservar {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 15px 40px;
+        border: 1px solid rgba(79, 172, 254, 0.5);
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        font-size: 0.9rem;
+        letter-spacing: 2px;
+        transition: all 0.3s ease;
+        background: rgba(5, 16, 32, 0.8);
+        cursor: pointer;
+    }
+
+    .btn-reservar:hover {
+        background: linear-gradient(90deg, #4facfe 0%, #a18cd1 100%);
+        border-color: transparent;
+        color: #051020;
+        font-weight: bold;
+    }
+
+    /* --- SECCIONES --- */
+    section {
+        padding: 100px 15%; /* Mucho espacio a los lados en PC */
+    }
+
+    .section-title {
+        text-align: center;
+        margin-bottom: 60px;
+        font-size: 2rem;
+        color: #4facfe;
+    }
+
+    /* --- GALERÍA --- */
+    .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 Columnas */
+        gap: 30px;
+    }
+
+    .gallery-item {
+        position: relative;
+        height: 450px; /* Altura generosa en PC */
+        overflow: hidden;
+        border-radius: 4px;
+    }
+
+    .gallery-item img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease, filter 0.6s ease;
+        filter: grayscale(40%);
+    }
+
+    .gallery-item:hover img {
+        transform: scale(1.05);
+        filter: grayscale(0%);
+    }
+
+    /* --- RECOMENDACIONES --- */
+    #reviews {
+        background: linear-gradient(to right, #051020, #08162b);
+    }
+
+    .reviews-row {
+        display: flex;
+        justify-content: space-between;
+        gap: 40px;
+    }
+
+    .review-card {
+        flex: 1;
+        background: rgba(255, 255, 255, 0.03);
+        padding: 40px;
+        border-left: 2px solid #a18cd1;
+        border-radius: 0 10px 10px 0;
+        transition: transform 0.3s ease;
+    }
+
+    .review-card:hover {
+        transform: translateY(-5px); /* Efecto flotante al pasar mouse en PC */
+    }
+
+    .review-text {
+        font-style: italic;
+        color: #cbd5e0;
+        margin-bottom: 20px;
+    }
+
+    .review-author {
+        font-weight: bold;
+        color: #4facfe;
+        text-transform: uppercase;
+    }
+
+    /* --- CONTACTO --- */
+    footer {
+        background-color: #020810;
+        padding: 80px 10%;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .contact-details {
+        display: flex;
+        justify-content: center;
+        gap: 80px;
+        margin-bottom: 50px;
+    }
+
+    .contact-item span {
+        font-size: 2rem;
+        display: block;
+        margin-bottom: 15px;
+        color: #a18cd1;
+    }
+
+    /* =========================================
+       2. MEDIA QUERY: TABLET 
+       (Entre 768px y 1024px - iPads, Tablets)
+       ========================================= */
+    @media screen and (max-width: 1024px) {
+        
+        section {
+            padding: 80px 8%; /* Reducimos márgenes laterales */
+        }
+
+        .hero-content h1 {
+            font-size: 3.5rem; /* Título un poco más pequeño */
+        }
+
+        .gallery-grid {
+            gap: 20px; /* Menos espacio entre fotos */
+        }
+
+        .gallery-item {
+            height: 350px; /* Fotos un poco más bajas */
+        }
+
+        .contact-details {
+            gap: 40px; /* Acercamos los iconos de contacto */
+        }
+    }
+
+    /* =========================================
+       3. MEDIA QUERY: CELULAR / MÓVIL
+       (Menos de 768px - Smartphones)
+       ========================================= */
+    @media screen and (max-width: 768px) {
+
+        /* Ajuste Parallax en móvil (importante para rendimiento) */
+        header {
+            background-attachment: scroll; 
+            background-position: center;
+        }
+
+        .hero-content h1 {
+            font-size: 2.5rem; /* Título legible en pantalla vertical */
+            line-height: 1.1;
+        }
+
+        .hero-content p {
+            font-size: 1rem;
+        }
+
+        section {
+            padding: 60px 6%; /* Aprovechamos más el ancho de pantalla */
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 40px;
+        }
+
+        /* Galería en 1 sola columna para ver fotos grandes */
+        .gallery-grid {
+            grid-template-columns: 1fr; 
+            gap: 15px;
+        }
+
+        .gallery-item {
+            height: 300px; /* Altura optimizada para scroll */
+        }
+
+        /* Testimonios uno debajo del otro */
+        .reviews-row {
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .review-card {
+            padding: 25px;
+        }
+
+        /* Contacto en columna */
+        .contact-details {
+            flex-direction: column;
+            gap: 30px;
+        }
+
+        .contact-item span {
+            font-size: 1.5rem;
+            margin-bottom: 5px;
+        }
+
+        .btn-reservar {
+            width: 100%; /* Botón ancho para dedo fácil */
+            text-align: center;
+            padding: 15px 0;
+        }
+    }
+</style>
+</head>
+<body>
+
+    <header>
+        <div class="overlay"></div>
+        <div class="hero-content">
+            <h1 class="text-gradient">GABO STYLISH</h1>
+            <p>CORTE · ESTILO · PRECISIÓN</p>
+            <a href="#contact" class="btn-reservar">Agendar Cita</a>
+        </div>
+    </header>
+
+    <section id="gallery">
+        <h2 class="section-title">Galeria</h2>
+        <div class="gallery-grid">
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/07/6e/f5/076ef5dbd7822128f154521c65c33deb.jpg" alt="Corte Fade">
+            </div>
+            <div class="gallery-item">
+                <img src="https://i.pinimg.com/736x/ed/24/5f/ed245f52f535ad1de62fa2bacf42b683.jpg" alt="Barba y Estilo">
+            </div>
+            <div class="gallery-item">
+                <img src="https://hairstylesfeed.com/wp-content/uploads/2022/07/Buzz-Cut-With-Drop-Fade.jpg" alt="Tijeras y Corte">
+            </div>
+            <div class="gallery-item">
+                <img src="https://edgarhairstyle.com/wp-content/uploads/2023/11/Fluffy-Waves-Mexican-Caesar-Haircut-02.jpg" alt="Cliente Feliz">
+            </div>
+        </div>
+    </section>
+
+    <section id="reviews">
+        <h2 class="section-title">CLIENTES</h2>
+        <div class="reviews-row">
+            <div class="review-card">
+                <p class="review-text">"Esta sería la seccion de comentarios y recomendaciones de tus compañeros."</p>
+                <p class="review-author">— Carlos M.</p>
+            </div>
+            <div class="review-card">
+                <p class="review-text">"Esta sería la seccion de comentarios y recomendaciones de tus compañeros."</p>
+                <p class="review-author">— Alejandro R.</p>
+            </div>
+            <div class="review-card">
+                <p class="review-text">"Esta sería la seccion de comentarios y recomendaciones de tus compañeros."</p>
+                <p class="review-author">— Javier S.</p>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contact">
+        <div class="contact-info">
+            <h2 class="text-gradient">CONTACTO</h2>
+            <div class="contact-details">
+                <div class="contact-item">
+                    <span>📱</span>
+                    <p>+52 55 1234 5678</p>
+                </div>
+                <div class="contact-item">
+                    <span>⏰</span>
+                    <p>Lun - Sab<br>10:00 AM - 8:00 PM</p>
+                </div>
+            </div>
+            <a href="https://wa.me/5636962466" class="btn-reservar">WhatsApp Directo</a>
+            <div class="copyright">
+                <br><br>&copy; 2025 GABO STYLISH. Todos los derechos reservados.
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
