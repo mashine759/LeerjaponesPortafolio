@@ -276,6 +276,7 @@ body {
   padding: 10px 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px #aaa;
+  height: 100vh;
 }
 
 .hidden {
