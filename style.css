@@ -21,6 +21,7 @@ body {
 
 /**/
 
+
 .intro-hero {
     position: relative;
     width: 100%;
@@ -52,23 +53,24 @@ body {
 }
 
 .hero-overlay h1 {
-    font-size: 3.8em; /* Título más grande */
+    font-size: 3.8em;
     font-weight: 700;
     margin: 0 0 15px 0;
-    color: var(--hero-text-color);
-    text-shadow:
-   0px 0px 6px rgba(255, 255, 255, 0.9),   /* halo brillante */
-   2px 2px 6px rgba(0, 0, 0, 0.7);         /* sombra oscura */
+    color: white;
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.5);
+  
 }
+
 
 .hero-overlay p {
     font-size: 1.3em;
-    color: var(--hero-text-color);
+    color: white;
     margin: 0;
-    text-shadow:
-   0px 0px 6px rgba(255, 255, 255, 0.9),   /* halo brillante */
-   2px 2px 6px rgba(0, 0, 0, 0.7);         /* sombra oscura */
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.5);
 }
+
 
 /* Contenedor principal para centrar el contenido */
 .container {
@@ -159,6 +161,7 @@ footer {
    span{
     font-size: 1.5em;
    }
+   
 }
 
 /*Index*/
@@ -253,17 +256,28 @@ body {
   margin: auto;
 }
 
+.panelContainer{
+  margin-bottom: 8rem;
+}
+
 .panelContainer span{
   font-size: 1.5em;
+  
+}
+
+@media (min-width: 800px) {
+  .panelContainer img{
+    width: 50%;
+  }
 }
 
 .panel {
   width: 100%;
-  margin-bottom: 10rem;
   border-radius: 8px;
 }
 
 .dialogo {
+  
   font-size: 1.4rem;
   line-height: 2.2rem;
 }
