@@ -249,6 +249,10 @@ body {
   margin: auto;
 }
 
+.panelContainer span{
+  font-size: 1.5em;
+}
+
 .panel {
   width: 100%;
   margin-bottom: 10rem;
